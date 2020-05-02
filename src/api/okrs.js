@@ -4,6 +4,7 @@ import { version } from "./../../package.json";
 let defaultHeaders = {
   "Accept": "application/json, text/plain, */*",
   "Content-Type": "application/json",
+  "Access-Control-Allow-Origin": "*",
   "X-UA-Source": ORIGIN,
   "X-UA-Version": version
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-// import { hierarchy } from "./__mocks__/okrs";
+import data from "./__mocks__/data/sample-okrs.json";
 import './App.css';
 import RecursiveTreeView from './components/mui/TreeView';
 import { fetchOkrs } from './api/okrs';
@@ -12,11 +12,13 @@ function App() {
 
   useEffect(() => {
       fetchOkrs()
-        .then(data => {
-          setHierarchy(makeOkrsTree(data));
+        .then(res => {
+          setHierarchy(makeOkrsTree(res));
         })
         .catch(err => {
-          console.log(err);
+          // Due to CORS issue mocking the response for now.
+          // console.log(err);
+          setHierarchy(makeOkrsTree(data));
         });
   }, []);
 
