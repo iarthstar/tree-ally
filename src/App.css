@@ -42,3 +42,7 @@ code:before,
 code:after {
   content: '\`';
 }
+
+.node {
+  padding-left: 10px;
+}
